@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.0.0)
 project(active_3d_planning_app_reconstruction)
 
 find_package(catkin_simple REQUIRED)
+find_package(cpprestsdk REQUIRED)
 
 catkin_simple(ALL_DEPS_REQUIRED)
 
@@ -16,4 +17,4 @@ cs_add_executable(eval_voxblox_node
 cs_add_executable(reconstruction_planner_node
         src/planner/reconstruction_planner_node.cpp
         )
-target_link_libraries(reconstruction_planner_node ${catkin_LIBRARIES})
+target_link_libraries(reconstruction_planner_node ${catkin_LIBRARIES}  cpprestsdk::cpprest -lcrypto)

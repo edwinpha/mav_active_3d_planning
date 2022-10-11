@@ -1,7 +1,9 @@
-cmake_minimum_required(VERSION 3.0.0)
+cmake_minimum_required(VERSION 2.8.3)
 project(active_3d_planning_core)
 
 find_package(catkin_simple REQUIRED)
+find_package(cpprestsdk REQUIRED)
+
 catkin_simple(ALL_DEPS_REQUIRED)
 
 add_definitions(-std=c++14)
@@ -50,6 +52,8 @@ cs_add_library(${PROJECT_NAME}
         src/module/trajectory_evaluator/next_selector/random_complete.cpp
         src/module/trajectory_evaluator/next_selector/random_next.cpp
         src/module/trajectory_evaluator/next_selector/subsequent_best.cpp
+        src/module/trajectory_evaluator/next_selector/gnn_op.cpp
+        src/module/trajectory_evaluator/next_selector/gnn_pctsp.cpp
         src/module/trajectory_evaluator/next_selector/subsequent_best_complete.cpp
         src/module/trajectory_evaluator/simple_yaw_planning_evaluator.cpp
         src/module/trajectory_evaluator/simulated_sensor_evaluator.cpp
@@ -61,6 +65,7 @@ cs_add_library(${PROJECT_NAME}
         src/module/trajectory_evaluator/value_computers/global_normalized_gain.cpp
         src/module/trajectory_evaluator/voxel_type_evaluator.cpp
         src/module/trajectory_evaluator/voxel_weight_evaluator.cpp
+        src/module/trajectory_evaluator/shannon_mutual_information_gain.cpp
         src/module/trajectory_evaluator/yaw_planning_evaluator.cpp
         src/module/trajectory_generator.cpp
         src/module/trajectory_generator/generator_updater/recheck_collision.cpp
