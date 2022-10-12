@@ -107,7 +107,7 @@ class RRT : public TrajectoryGenerator {
   virtual bool adjustGoalPosition(const Eigen::Vector3d& start_pos,
                                   Eigen::Vector3d* goal_pos_);
 
-  bool resetTree(TrajectorySegment* root);
+  virtual bool resetTree(TrajectorySegment* root);
 };
 
 }  // namespace trajectory_generator

@@ -26,6 +26,9 @@ struct TrajectorySegment {
   double cost;
   double value;
 
+  // Associated number
+  int number;
+
   // flags
   bool tg_visited;  // trajectory generator visited during expansion site
   // selection
